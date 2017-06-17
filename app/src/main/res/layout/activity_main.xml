@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="question1"
+            type="com.example.android.quizapp.Question" />
+
+        <variable
+            name="question2"
+            type="com.example.android.quizapp.Question" />
+
+        <variable
+            name="question3"
+            type="com.example.android.quizapp.Question" />
+
+        <variable
+            name="question4"
+            type="com.example.android.quizapp.Question" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context="com.sample.foo.databindingsample.MainActivity">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/question1_img"
+                style="@style/question_img"
+                android:src="@{question1.imageResource, default=@drawable/lot788}" />
+
+            <TextView
+                style="@style/question_txt"
+                android:text="@{question1.text}" />
+
+            <RadioGroup
+                android:id="@+id/question1"
+                style="@style/radio_grp">
+
+                <RadioButton
+                    android:id="@+id/answer1_0"
+                    style="@style/radio_btn"
+                    android:text="@{question1.answers[0]}" />
+
+                <RadioButton
+                    android:id="@+id/answer1_1"
+                    style="@style/radio_btn"
+                    android:text="@{question1.answers[1]}" />
+
+                <RadioButton
+                    android:id="@+id/answer1_2"
+                    style="@style/radio_btn"
+                    android:text="@{question1.answers[2]}" />
+            </RadioGroup>
+
+            <View style="@style/hr">
+
+            </View>
+
+            <ImageView
+                android:id="@+id/question2_img"
+                style="@style/question_img"
+                android:src="@{question2.imageResource, default=@drawable/qfa738}" />
+
+            <TextView
+                style="@style/question_txt"
+                android:text="@{question2.text}" />
+
+            <RadioGroup
+                android:id="@+id/question2"
+                style="@style/radio_grp">
+
+                <RadioButton
+                    android:id="@+id/answer2_0"
+                    style="@style/radio_btn"
+                    android:text="@{question2.answers[0]}" />
+
+                <RadioButton
+                    android:id="@+id/answer2_1"
+                    style="@style/radio_btn"
+                    android:text="@{question2.answers[1]}" />
+
+                <RadioButton
+                    android:id="@+id/answer2_2"
+                    style="@style/radio_btn"
+                    android:text="@{question2.answers[2]}" />
+            </RadioGroup>
+
+            <View style="@style/hr">
+
+            </View>
+
+            <ImageView
+                android:id="@+id/question3_img"
+                style="@style/question_img"
+                android:src="@{question1.imageResource, default=@drawable/klm773}" />
+
+            <TextView
+                style="@style/question_txt"
+                android:text="@{question3.text}" />
+
+            <RadioGroup
+                android:id="@+id/question3"
+                style="@style/radio_grp">
+
+                <RadioButton
+                    android:id="@+id/answer3_0"
+                    style="@style/radio_btn"
+                    android:text="@{question3.answers[0]}" />
+
+                <RadioButton
+                    android:id="@+id/answer3_1"
+                    style="@style/radio_btn"
+                    android:text="@{question3.answers[1]}" />
+
+                <RadioButton
+                    android:id="@+id/answer3_2"
+                    style="@style/radio_btn"
+                    android:text="@{question3.answers[2]}" />
+            </RadioGroup>
+
+            <View style="@style/hr"></View>
+
+            <ImageView
+                android:id="@+id/question4_img"
+                style="@style/question_img"
+                android:src="@{question1.imageResource, default=@drawable/sas319}" />
+
+            <TextView
+                style="@style/question_txt"
+                android:text="@{question4.text}" />
+
+            <RadioGroup
+                android:id="@+id/question4"
+                style="@style/radio_grp">
+
+                <RadioButton
+                    android:id="@+id/answer4_0"
+                    style="@style/radio_btn"
+                    android:text="@{question4.answers[0]}" />
+
+                <RadioButton
+                    android:id="@+id/answer4_1"
+                    style="@style/radio_btn"
+                    android:text="@{question4.answers[1]}" />
+
+                <RadioButton
+                    android:id="@+id/answer4_2"
+                    style="@style/radio_btn"
+                    android:text="@{question4.answers[2]}" />
+            </RadioGroup>
+
+            <View style="@style/hr"></View>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="15dp"
+                android:onClick="gradeQuiz"
+                android:text="@string/grade" />
+        </LinearLayout>
+    </ScrollView>
+
+</layout>

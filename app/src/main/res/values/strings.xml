@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Aircraft Quiz</string>
+    <string name="question">What aircraft is that:</string>
+    <string name="grade">Grade</string>
+</resources>
