@@ -100,62 +100,44 @@
             <ImageView
                 android:id="@+id/question3_img"
                 style="@style/question_img"
-                android:src="@{question1.imageResource, default=@drawable/klm773}" />
+                android:src="@{question3.imageResource, default=@drawable/klm773}" />
 
             <TextView
                 style="@style/question_txt"
                 android:text="@{question3.text}" />
 
-            <RadioGroup
+            <EditText
                 android:id="@+id/question3"
-                style="@style/radio_grp">
-
-                <RadioButton
-                    android:id="@+id/answer3_0"
-                    style="@style/radio_btn"
-                    android:text="@{question3.answers[0]}" />
-
-                <RadioButton
-                    android:id="@+id/answer3_1"
-                    style="@style/radio_btn"
-                    android:text="@{question3.answers[1]}" />
-
-                <RadioButton
-                    android:id="@+id/answer3_2"
-                    style="@style/radio_btn"
-                    android:text="@{question3.answers[2]}" />
-            </RadioGroup>
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="eg. Boeing 777-300, Airbus A330-300"
+                android:inputType="text" />
 
             <View style="@style/hr"></View>
 
             <ImageView
                 android:id="@+id/question4_img"
                 style="@style/question_img"
-                android:src="@{question1.imageResource, default=@drawable/sas319}" />
+                android:src="@{question4.imageResource, default=@drawable/sas319}" />
 
             <TextView
                 style="@style/question_txt"
                 android:text="@{question4.text}" />
 
-            <RadioGroup
-                android:id="@+id/question4"
-                style="@style/radio_grp">
+            <CheckBox
+                android:id="@+id/answer4_0"
+                style="@style/checkbox"
+                android:text="@{question4.answers[0]}" />
 
-                <RadioButton
-                    android:id="@+id/answer4_0"
-                    style="@style/radio_btn"
-                    android:text="@{question4.answers[0]}" />
+            <CheckBox
+                android:id="@+id/answer4_1"
+                style="@style/checkbox"
+                android:text="@{question4.answers[1]}" />
 
-                <RadioButton
-                    android:id="@+id/answer4_1"
-                    style="@style/radio_btn"
-                    android:text="@{question4.answers[1]}" />
-
-                <RadioButton
-                    android:id="@+id/answer4_2"
-                    style="@style/radio_btn"
-                    android:text="@{question4.answers[2]}" />
-            </RadioGroup>
+            <CheckBox
+                android:id="@+id/answer4_2"
+                style="@style/checkbox"
+                android:text="@{question4.answers[2]}" />
 
             <View style="@style/hr"></View>
 
