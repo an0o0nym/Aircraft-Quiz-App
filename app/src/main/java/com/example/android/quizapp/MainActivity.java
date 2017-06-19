@@ -15,7 +15,6 @@ import com.example.android.quizapp.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
     final int NO_OF_QUESTIONS = 4;
-    final int TOTAL_POINTS = 5;
     Question[] questions;
     String[] questionTypes;
     Context context;
@@ -63,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
             } else if (questionTypes[i].equals("text")) {
                 String editTextAnswer = ((EditText) findViewById(R.id.question3)).getText().toString();
                 if (editTextAnswer.length() > 0) {
-                    if (editTextAnswer.toLowerCase().equals(questions[i].getCorrectAnswer())) {
+                    if (editTextAnswer.trim().equalsIgnoreCase(questions[i].getCorrectAnswer())) {
                         correctAnswers++;
                     }
                 } else {
@@ -73,10 +72,8 @@ public class MainActivity extends AppCompatActivity {
             } else if (questionTypes[i].equals("checkbox")) {
                 if (((CheckBox) findViewById(R.id.answer4_0)).isChecked() || ((CheckBox) findViewById(R.id.answer4_1)).isChecked() ||
                         ((CheckBox) findViewById(R.id.answer4_2)).isChecked()) {
-                    if (((CheckBox) findViewById(R.id.answer4_0)).isChecked()) {
-                        correctAnswers++;
-                    }
-                    if (((CheckBox) findViewById(R.id.answer4_1)).isChecked()) {
+                    if (((CheckBox) findViewById(R.id.answer4_0)).isChecked() && ((CheckBox) findViewById(R.id.answer4_1)).isChecked() &&
+                            !((CheckBox) findViewById(R.id.answer4_2)).isChecked()) {
                         correctAnswers++;
                     }
                 } else {
@@ -87,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         if (!flag) {
-            text = "You have scored " + correctAnswers + " out of " + TOTAL_POINTS + " points.";
+            text = "You have scored " + correctAnswers + " out of " + NO_OF_QUESTIONS + " points.";
         } else {
             text = "You did not answered all questions!";
         }
