@@ -53,8 +53,9 @@ public class MainActivity extends AppCompatActivity {
         boolean flag = false; // determines whether all questions have been answered
         for (int i = 0; i < NO_OF_QUESTIONS; i++) {
             if (questionTypes[i].equals("radio")) {
-                if (checkRadioAnswer(i)) {
-                    correctAnswers++;
+                if (radioIsChecked(i)) {
+                    if (checkRadioAnswer(i))
+                        correctAnswers++;
                 } else {
                     flag = true;
                     break;
@@ -92,13 +93,19 @@ public class MainActivity extends AppCompatActivity {
         correctAnswers = 0;
     }
 
-    public boolean checkRadioAnswer(int questionNo) {
+    public int getAnswerID(int questionNo) {
         int radioGroupID = getResources().getIdentifier("question" + (questionNo + 1), "id", getPackageName());
-        int answerID = ((RadioGroup) findViewById(radioGroupID)).getCheckedRadioButtonId();
-        if (answerID < 0) {
+        return ((RadioGroup) findViewById(radioGroupID)).getCheckedRadioButtonId();
+    }
+
+    public boolean radioIsChecked(int questionNo) {
+        if (getAnswerID(questionNo) < 1)
             return false;
-        }
-        CharSequence answerText = ((RadioButton) findViewById(answerID)).getText();
+        return true;
+    }
+
+    public boolean checkRadioAnswer(int questionNo) {
+        CharSequence answerText = ((RadioButton) findViewById(getAnswerID(questionNo))).getText();
 
         return questions[questionNo].getCorrectAnswer().equals(answerText);
     }
